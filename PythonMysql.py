@@ -36,6 +36,25 @@ class FormularioClientes:
         Button(groupbox,text="Modificar",width=10).grid(row=4,column=1)
         Button(groupbox,text="Eliminar",width=10).grid(row=4,column=2)
         
+        
+        groupbox = LabelFrame(base,text="Lista del personal",padx=5,pady=5)
+        groupbox.grid(row=0,column=1,padx=5,pady=5)
+        
+        tree = ttk.Treeview(groupbox,columns=("Id","Nombres","Apellidos","Sexo"),show='headings',height=5,)
+        tree.column("# 1",anchor=CENTER)
+        tree.heading("# 1", text="Id")
+        tree.column("# 2",anchor=CENTER)
+        tree.heading("# 2", text="Nombres")
+        tree.column("# 3",anchor=CENTER)
+        tree.heading("# 3", text="Apellidos")
+        tree.column("# 4",anchor=CENTER)
+        tree.heading("# 4", text="Sexo")
+        
+        
+        tree.pack()
+        
+        
+        
         base.mainloop()
                 
     except ValueError as error:
