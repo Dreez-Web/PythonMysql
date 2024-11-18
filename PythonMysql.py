@@ -21,10 +21,9 @@ class FormularioClientes:
      global textBoxApellidos
      textBoxApellidos= None
      
-     global textBoxId
-     textBoxId = None
+     global tree 
+     tree = None
      
-     global textBoxNombres
      
      
      
