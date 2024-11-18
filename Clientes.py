@@ -1,6 +1,6 @@
 from Conexion import *
 
-class CCleintes:
+class CClientes:
     
     def ingresarclientes(nombres,apellidos,sexo):
         
