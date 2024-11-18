@@ -2,10 +2,32 @@ import tkinter as tk
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
+from Clientes import *
+from Conexion import *
 
 class FormularioClientes:
     
  def Formulario():
+     
+     global groupbox
+     groupbox = None
+     
+     global textBoxId
+     textBoxId = None
+     
+     global textBoxNombres
+     textBoxNombres = None
+     
+     global textBoxApellidos
+     textBoxApellidos= None
+     
+     global textBoxId
+     textBoxId = None
+     
+     global textBoxNombres
+     
+     
+     
     try:
         base = Tk()
         base.geometry("1200x600")
