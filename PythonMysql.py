@@ -99,7 +99,7 @@ def guardarRegistros():
     global textBoxNombres, textBoxApellidos, combo, groupbox
     
     try:
-        #verificar si los wdgets estan inicializados
+        #verificar si los widgets estan inicializados
         if textBoxNombres is None or textBoxApellidos is None or combo is None:
             print("Los widgets no estan inicializados")
             
