@@ -13,6 +13,7 @@ A modo de interface en **MYSQL** utilice **Mysql Workbench**
 ## Pasos del desarrollo
 
 - Paso 1
+  Comenzamos con el desarrollo de la interface, se realiza en **Tkinter** agregando los campos que deseamos, en este caso los campos son Id, Nombres, Apellido y Sexo.
 - Paso 2
 - Paso 3
 - Paso 4
