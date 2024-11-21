@@ -82,6 +82,11 @@ def Formulario():
             tree.column("# 4",anchor=CENTER)
             tree.heading("# 4", text="Sexo")
             
+            #agregar los datos a la tabla
+            #mostrar tabla
+
+            for row in CClientes.mostrarClientes():
+                  tree.insert("","end",values=row)
             
             tree.pack()
             

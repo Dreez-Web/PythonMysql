@@ -1,6 +1,19 @@
 from Conexion import *
 
 class CClientes:
+
+    def mostrarClientes():
+        try:
+            cone = CConexion.ConexionBaseDeDatos()
+            cursor = cone.cursor()
+            cursor.execute("select * from usuarios;")
+            miResutado = cursor.fetchall()
+            cone.commit()
+            cone.close()
+            return miResutado
+        
+        except mysql.connector.Error as error:
+            print("Error de mostrar datos{}".format(error))
     
     def ingresarclientes(nombres,apellidos,sexo):
         

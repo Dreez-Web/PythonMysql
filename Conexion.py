@@ -6,7 +6,7 @@ class CConexion:
         try:
             conexion = mysql.connector.connect(
                 user='root',
-                password='andres',
+                password='', #En portatil el pass esta vacio, en PC el pass es "andres"
                 host='localhost',
                 database='clientesdb',
                 port='3306'
