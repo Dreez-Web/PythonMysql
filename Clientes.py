@@ -33,3 +33,18 @@ class CClientes:
             
         except mysql.connector.Error as error:
             print("Error de ingreso de datos{}".format(error))
+
+    def modificarClientes(idUsuario,nombres,apellidos,sexo):
+        
+        try:
+            cone = CConexion.ConexionBaseDeDatos()
+            cursor = cone.cursor()
+            sql = "UPDATE usuarios SET usuarios.nombres = %s,usuarios.apellidos = %s, usuarios.sexo = %s WHERE usuarios.id = %s;"   
+            valores = (nombres,apellidos,sexo,idUsuario)
+            cursor.execute(sql,valores)
+            cone.commit()
+            print(cursor.rowcount,"Registro Actualizado")
+            cone.close()
+            
+        except mysql.connector.Error as error:
+            print("Error de Actualizacion de datos{}".format(error))        
