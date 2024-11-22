@@ -47,4 +47,19 @@ class CClientes:
             cone.close()
             
         except mysql.connector.Error as error:
-            print("Error de Actualizacion de datos{}".format(error))        
+            print("Error de Actualizacion de datos{}".format(error))  
+
+    def eliminarClientes(idUsuario):
+        
+        try:
+            cone = CConexion.ConexionBaseDeDatos()
+            cursor = cone.cursor()
+            sql = "DELETE from usuarios WHERE usuarios.id = %s;"
+            valores = (idUsuario,)
+            cursor.execute(sql,valores)
+            cone.commit()
+            print(cursor.rowcount,"Registro Eliminado")
+            cone.close()
+            
+        except mysql.connector.Error as error:
+            print("Error de Eliminacion de datos{}".format(error))                      

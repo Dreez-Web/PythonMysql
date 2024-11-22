@@ -64,9 +64,9 @@ def Formulario():
             combo.grid(row=3,column=1)
             seleccionSexo.set("Masculino")
             
-            Button(groupbox,text="Guardar",width=10,command=guardarRegistros).grid(row=4,column=0)
-            Button(groupbox,text="Modificar",width=10,command=modificarRegistros).grid(row=4,column=1)
-            Button(groupbox,text="Eliminar",width=10).grid(row=4,column=2)
+            Button(groupbox,text="Guardar",width=10,command = guardarRegistros).grid(row=4,column=0)
+            Button(groupbox,text="Modificar",width=10,command = modificarRegistros).grid(row=4,column=1)
+            Button(groupbox,text="Eliminar",width=10,command = eliminarRegistros).grid(row=4,column=2)
             
             
             groupbox = LabelFrame(base,text="Lista del personal",padx=5,pady=5)
@@ -177,7 +177,7 @@ def modificarRegistros():
         sexo = combo.get()
         
         CClientes.modificarClientes(idUsuario,nombres, apellidos, sexo)
-        messagebox.showinfo("Informacion","Los datos fueron guardados")
+        messagebox.showinfo("Informacion","Los datos fueron modificados")
         
         actualizarTreeView()
 
@@ -186,6 +186,30 @@ def modificarRegistros():
         textBoxNombres.delete(0,END)
         textBoxApellidos.delete(0,END)
     except ValueError as error:
-        print("Error al ingresar los datos{}".format(error))         
+        print("Error al modificar los datos{}".format(error)) 
+
+def eliminarRegistros():
+    
+    global textBoxId,textBoxNombres,textBoxApellidos
+    
+    try:
+        #verificar si los widgets estan inicializados
+        if textBoxId is NONE:
+            print("Los widgets no estan inicializados")
+            return
+        idUsuario = textBoxId.get()
+        
+        
+        CClientes.eliminarClientes(idUsuario)
+        messagebox.showinfo("Informacion","Los datos fueron eliminados")
+        
+        actualizarTreeView()
+
+        #limpiamos los campos
+        textBoxId.delete(0,END)
+        textBoxNombres.delete(0,END)
+        textBoxApellidos.delete(0,END)
+    except ValueError as error:
+        print("Error al modificar los datos{}".format(error))        
 Formulario() 
 
